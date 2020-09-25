@@ -6,7 +6,7 @@
 
 // }
 
-//jQuery document ready function
+//jQuery document ready function to have page ready to go
 $(document).ready(function(){
     // Display current date and time in the header
     $("#currentDay").text(moment().format('MMMM Do YYYY, h:mm:ss a'));
