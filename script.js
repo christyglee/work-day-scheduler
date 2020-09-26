@@ -29,8 +29,20 @@ $(document).ready(function(){
     } //Future current time - need to edit colors in css
     else {
     } //Present time - need to edit colors in css
-
     console.log(currentHour);
+
+//need to work on click and edit function
+    $(".textHour").text(localStorage.getItem("type"));
+    $(".saveBtn").click(function() {
+        localStorage.setItem("type", $("input").val());
+        $(".textHour").text($("input").val());
+
+    })
+
+    // var textHour = $(".textHour");
+    // textHour = hour
+    // console.log(textHour);
+
 }
 });
 
