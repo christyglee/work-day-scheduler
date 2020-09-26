@@ -32,9 +32,9 @@ $(document).ready(function(){
     console.log(currentHour);
 
 //need to work on click and edit function
-    $(".textHour").text(localStorage.getItem("type"));
+    $(".textHour").text(localStorage.getItem("notes"));
     $(".saveBtn").click(function() {
-        localStorage.setItem("type", $("input").val());
+        localStorage.setItem("notes", $("input").val());
         $(".textHour").text($("input").val());
 
     })
