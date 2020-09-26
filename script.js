@@ -31,17 +31,36 @@ $(document).ready(function(){
     } //Present time - need to edit colors in css
     console.log(currentHour);
 
-//need to work on click and edit function
-    $(".textHour").text(localStorage.getItem("notes"));
-    $(".saveBtn").click(function() {
-        localStorage.setItem("notes", $("input").val());
-        $(".textHour").text($("input").val());
-
-    })
+// Need to somehow link the time to middle textarea column to correspond with current time
+    var textHour = $(".textHour");
+    textHour = currentHour;
+    // console.log(textHour);
+    if(textHour  >= 1 && textHour <= 5){
+        textHour += 12;
+        }
+        if(textHour < currentTime) {
+        } //Past current time - need to edit colors in css
+        else if(textHour > currentTime) {
+        } //Future current time - need to edit colors in css
+        else {
+        } //Present time - need to edit colors in css
+        console.log(textHour);
+    
 
     // var textHour = $(".textHour");
     // textHour = hour
     // console.log(textHour);
+
+// Local storage - need to work on click and edit function
+    // $(".textHour").text(localStorage.getItem("notes"));
+    // $(".saveBtn").click(function() {
+    //     localStorage.setItem("notes", $("input").val());
+    //     $(".textHour").text($("input").val());
+
+    // })
+
+
+
 
 }
 });
