@@ -39,16 +39,15 @@ $(document).ready(function(){
         // console.log(timeDiff);
         // console.log(realTime);
 
-        if(timeDiff < -60) { // future time color/class
+        if(timeDiff < -60) { // past time color/class
             $(textHourBlock).addClass("past");
-
         } 
         else if(timeDiff > 0) { // future time color/class
             $(textHourBlock).addClass("future");
         } 
         else { // present time color/class
             $(textHourBlock).addClass("present");
-        } //Present time - need to edit colors in css
+        } 
         // console.log(textHour);
     }
        

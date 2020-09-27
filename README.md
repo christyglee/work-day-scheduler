@@ -23,14 +23,15 @@ The next image below shows that the text field is saved into the browser's Local
 
 ## Coding Process
 
-There were many components tied to creating this day planner application. Using third-party APIs such as moment.js and Bootstrap grid along with jQuery and CSS styling, I was able to create the application to look and function as a day scheduler. 
+There were many components tied to creating this day planner application. Using third-party APIs such as moment.js and Bootstrap grid along with jQuery and CSS styling, I was able to create the application to look and function as a day scheduler. However, the most challenging part was figuring out how to color code the timeblock background colors to indicate whether it is in past, present, or future. 
 
+In the source code below, I created variables to get the difference between real time in minutes, applied it to the if/else statement, and tied the CSS styling by using "addClass". 
 
+![Image](dayPlanner3.PNG)
 
-
+<br>
 
 To view the live website, please navigate to the **Deployed Link** below or  [click here](https://christyglee.github.io/work-day-scheduler/) to view the page.
-
 
 <br>
 
