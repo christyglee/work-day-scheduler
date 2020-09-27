@@ -18,14 +18,13 @@ $(document).ready(function(){
 
     // console.log(currentTime);
 
-        //worked on this with Kush
+        // variable to get AM or PM for if/else statements to correspond with military time
         var AMPM = (timeBlock.slice(-2));
         var currentHour = parseInt(timeBlock.slice(0, timeBlock.length - 2));
 
         if(AMPM === "AM"){
             // console.log(currentHour);
             // console.log(AMPM);
-
         }
         else {
             if(currentHour >= 1 && currentHour <= 11){
@@ -40,14 +39,14 @@ $(document).ready(function(){
         // console.log(timeDiff);
         // console.log(realTime);
 
-        if(timeDiff < -60) {
+        if(timeDiff < -60) { // future time color/class
             $(textHourBlock).addClass("past");
 
-        } //Past current time - need to edit colors in css
-        else if(timeDiff > 0) {
+        } 
+        else if(timeDiff > 0) { // future time color/class
             $(textHourBlock).addClass("future");
-        } //Future current time - need to edit colors in css
-        else {
+        } 
+        else { // present time color/class
             $(textHourBlock).addClass("present");
         } //Present time - need to edit colors in css
         // console.log(textHour);
@@ -73,8 +72,6 @@ $(document).ready(function(){
         $(this).val(retrieveItem);
 
     });
-
-
 
     });
 
