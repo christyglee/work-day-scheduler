@@ -9,7 +9,7 @@ $(document).ready(function(){
     // console.log(hour);
     // console.log(textHour);
     
-    //
+    // For loop to set hour variables
     for (var i = 0; i < hour.length; i++) {
         timeBlock = hour[i].innerHTML;
 
