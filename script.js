@@ -1,9 +1,3 @@
-
-// function getCurrentTime () { //annonyous function bc we're not passing any values into it
-// var currentTime = 
-// console.log(currentTime);
-// }
-
 //jQuery document ready function to have page ready to go
 $(document).ready(function(){
     // Display current date and time in the header
@@ -11,63 +5,55 @@ $(document).ready(function(){
 
     var timeBlock = $(".hour").html();
     var hour = $(".hour");
+    var textHour = $(".textHour");
+    // console.log(hour);
+    // console.log(textHour);
     
+    //
     for (var i = 0; i < hour.length; i++) {
-    timeBlock = hour[i].innerHTML;
-    // console.log(timeBlock);
+        timeBlock = hour[i].innerHTML;
 
-    var currentTime = moment().format('HH'); 
-    //  moment().hours(currentHour).minutes(0).seconds(0)
+        var textHourBlock = textHour[i];
+        // var currentTime = moment().format('HH'); 
 
     // console.log(currentTime);
 
-    var currentHour = parseInt(timeBlock.slice(0, timeBlock.length - 2));
-    if(currentHour >= 1 && currentHour <= 5){
-    currentHour += 12;
-    }
-    }
-    // if(currentHour < currentTime) {
-    // } //Past current time - need to edit colors in css
-    // else if(currentHour > currentTime) {
-    // } //Future current time - need to edit colors in css
-    // else {
-    // } //Present time - need to edit colors in css
-    // console.log(currentHour);
+        //worked on this with Kush
+        var AMPM = (timeBlock.slice(-2));
+        var currentHour = parseInt(timeBlock.slice(0, timeBlock.length - 2));
 
-// Need to somehow link the time to middle textarea column to correspond with current time
-    var textHour = $(".textHour");
-    // console.log(textHour.val(currentHour));
-    // console.log(textHour);
-    var realTime = moment().hours(currentHour).minutes(0).seconds(0);
-    
-    var timeDiff = (realTime.diff(moment(),"minutes"));
-    console.log(timeDiff);
-    if(textHour  >= 1 && textHour <= 5){
-        textHour += 12;
+        if(AMPM === "AM"){
+            // console.log(currentHour);
+            // console.log(AMPM);
+
+        }
+        else {
+            if(currentHour >= 1 && currentHour <= 11){
+            currentHour += 12;
+            console.log(currentHour);
+            // console.log(AMPM);
+            }
         }
 
-    $.each(textHour,function(){
+        var realTime = moment().hours(currentHour).minutes(0).seconds(0);
+        var timeDiff = (realTime.diff(moment(),"minutes"));
+        // console.log(timeDiff);
+        // console.log(realTime);
+
         if(timeDiff < -60) {
-            textHour.css("background-color", "#d3d3d3");
+            $(textHourBlock).addClass("past");
 
         } //Past current time - need to edit colors in css
         else if(timeDiff > 0) {
-            textHour.css("background-color", "#77dd77");
+            $(textHourBlock).addClass("future");
         } //Future current time - need to edit colors in css
         else {
-            textHour.css("background-color", "#ff6961");
+            $(textHourBlock).addClass("present");
         } //Present time - need to edit colors in css
         // console.log(textHour);
-    });
-    
-
-    
-
-    // }
+    }
+       
     // Local storage
-
-    
-
     var textarea = $(".textHour");
     
     var saveBtn = $(".saveBtn");
@@ -86,14 +72,12 @@ $(document).ready(function(){
 
         $(this).val(retrieveItem);
 
-    })
+    });
 
 
 
     });
 
-    //
-    
 
 
     // var textHour = $(".textHour");
@@ -107,11 +91,6 @@ $(document).ready(function(){
     //     $(".textHour").text($("input").val());
 
     // })
-    
-
-
-
-
 
 // Setting array for planner times
 
